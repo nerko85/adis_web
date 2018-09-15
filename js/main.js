@@ -1,5 +1,4 @@
-    console.log('test')
-
+    
     // Full screen scroller
     $.scrollify({
         section : ".scrollify",
@@ -7,8 +6,8 @@
         scrollSpeed: 1100,
         offset : 0,
         scrollbars: false,
-        standardScrollElements: "",
-        setHeights: false,
+        standardScrollElements: "#cover",
+        setHeights: true,
         overflowScroll: true,
         updateHash: true,
         touchScroll:true,
@@ -107,3 +106,73 @@ buttonsWrapper.forEach(function(buttonsWrapper, i) {
 //         nav:true
 //     });
 //   });
+
+
+// HAMBURGER MENU
+
+var test = anime.timeline();
+
+
+function init(timeline, easing){
+  timeline.add({
+  targets:'.top',
+  translateY:10,
+  duration:400,
+  easing: easing
+  }).
+  add({
+    targets:'.bottom',
+    translateY:-10,
+    duration:400,
+    easing: easing,
+    offset:400
+  })
+  .add({
+    targets:'.middle',
+    opacity:0,
+    duration:200,
+    offset:400
+  }).
+  add({
+    targets: '.top',
+    translateY:10,
+    rotate: ['0', '45deg'],
+    duration: 400,
+    offset:900,
+    easing: easing,
+    transformOrigin:"50% 50%"
+  }).
+  add({
+    targets: '.bottom',
+    translateY:-10,
+    rotate: ['0', '-45deg'],
+    duration: 400,
+    offset:900,
+    easing: easing,
+    transformOrigin:"50% 50%"
+  })
+}
+    const menu = document.querySelector('.overlay__menu');
+    const hamburger = document.querySelector('.hamburger');
+//   document.querySelector('.hamburger').onclick = function() {
+//     // this.classList.toggle('active');
+//     // if(this.classList.contains('active')){   
+//     //   test.reverse();
+//     // }
+//     // test.play();
+//     menu.classList.toggle('menu__open');
+//     test.reverse();
+//     test.play();
+//   }
+
+    const easing = 'easeInOutCubic';
+
+    function myFunc(){
+        init(test,'easeInOutCubic');
+    }
+
+  hamburger.addEventListener('click', myFunc)
+
+
+// init(test,'easeInBack');
+// init(test,'easeInOutCubic');
