@@ -159,7 +159,7 @@ function init(timeline, easing){
 //     // if(this.classList.contains('active')){   
 //     //   test.reverse();
 //     // }
-//     // test.play();
+//     // test.play();sd
 //     menu.classList.toggle('menu__open');
 //     test.reverse();
 //     test.play();
