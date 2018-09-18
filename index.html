@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-    <section class="overlay__menu`">
+    <section class="overlay__menu">
         <div class="menu__wrapper">
                 <div class="menu__content">
                     <div class="menu__list_wrapper">
@@ -55,7 +55,14 @@
 <div class="container">
     <!-- COVER SLIDER -->
     <section class="scrollify container--showcase">
-    
+
+        <div class="scroller">
+            <p>Scroll</p>
+            <div class="wrapper">
+                <span class="line"></span>
+            </div>
+        </div>
+        
     </section>
     <!-- PRODUCTS SECTION -->
     <div class="products--wrapper">
@@ -227,7 +234,39 @@
       </section>
     </div>
     <!-- FOOTER -->
-    <div class="scrollify container--footer"></div>
+    <div class="scrollify container--footer">
+        <div class="contact-wrapper">
+            <div class="left">
+                <div>
+                <p>Adress</p>
+                <p class="left-info">Zenica 72000, Bosnia & Herzegovina</p>
+                <br>
+                <p>Lets Talk</p>
+                <p class="left-info">+387 60 123 1234</p>
+                <br>
+                <p>General Support</p>
+                <p class="left-info">example@email.com</p>
+                </div>
+            </div>
+            <div class="right">
+                <form class="right-inner">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            
+                <label for="email">Email</label>
+                <input type="text" id="email" name="lastname" placeholder="Eg. example@email.com">
+            
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+            
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+        </div>
+    </div>
   </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js'></script>

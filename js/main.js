@@ -1,4 +1,5 @@
-    
+    console.log('test')
+
     // Full screen scroller
     $.scrollify({
         section : ".scrollify",
@@ -112,7 +113,6 @@ buttonsWrapper.forEach(function(buttonsWrapper, i) {
 
 var test = anime.timeline();
 
-
 function init(timeline, easing){
   timeline.add({
   targets:'.top',
@@ -153,26 +153,18 @@ function init(timeline, easing){
   })
 }
     const menu = document.querySelector('.overlay__menu');
-    const hamburger = document.querySelector('.hamburger');
-//   document.querySelector('.hamburger').onclick = function() {
-//     // this.classList.toggle('active');
-//     // if(this.classList.contains('active')){   
-//     //   test.reverse();
-//     // }
-//     // test.play();sd
-//     menu.classList.toggle('menu__open');
-//     test.reverse();
-//     test.play();
-//   }
-
-    const easing = 'easeInOutCubic';
-
-    function myFunc(){
-        init(test,'easeInOutCubic');
-    }
-
-  hamburger.addEventListener('click', myFunc)
+    console.log(menu)
+  document.querySelector('.hamburger').onclick = function() {
+    // this.classList.toggle('active');
+    // if(this.classList.contains('active')){   
+    //   test.reverse();
+    // }
+    // test.play();
+    menu.classList.toggle('menu__open');
+    test.reverse();
+    test.play();
+  }
 
 
 // init(test,'easeInBack');
-// init(test,'easeInOutCubic');
+init(test,'easeInOutCubic');
