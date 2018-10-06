@@ -28,10 +28,13 @@ a {
   position: fixed;
   left: 0;
   top: 0;
+  height: 100%;
+  width: 100%;
   background: blueviolet;
   z-index: 999;
-  opacity: 0;
+  opacity: 1;
   display: flex;
+  /* visibility: hidden; */
   align-items: center;
   justify-content: center;
 }
@@ -97,7 +100,8 @@ a {
 .top__nav {
   z-index: 9999;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   display: flex;
   justify-content: center;
   top: 0;
@@ -183,25 +187,22 @@ a {
 }
 
 .hamburger{
-  cursor: pointer;
+  /* position:relative; */
+  cursor:pointer;
+  display:block;
 }
 
 .ham {
-  /* border-radius: 5px; */
-  height: 2px;
-  width: 25px;
-  background: white;
-  position: relative;
-  margin-bottom: 8px;
-  transition: all .3s ease-in;
+  height:2px;
+  width:25px;
+  background:hsla(360, 100%, 100%, 1);
+  position:relative;
+  margin:8px 0;
+  transition: background .3s ease-in;
 }
 
 .hamburger:hover .ham {
-  opacity: 0.5;
-}
-
-.ham:last-child {
-  margin-bottom: 0px;
+  background:hsla(360, 100%, 100%, 0.5);
 }
 
 .container {
@@ -499,6 +500,10 @@ a {
   }
 }
 
+.container--footer {
+  background: #999;
+}
+
 /* CONTACT FORM */
 
 .contact-wrapper {
@@ -535,6 +540,10 @@ a {
   font-size: 1em;
   line-height: 1.2;
   color: #fff;
+}
+
+.contact-wrapper p {
+  padding-bottom: 6px;
 }
 
 
@@ -607,4 +616,9 @@ input[type=submit]:hover {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
     }
+}
+
+.btn {
+  position:relative;
+  left:-500px;
 }

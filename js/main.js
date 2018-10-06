@@ -111,20 +111,24 @@ buttonsWrapper.forEach(function(buttonsWrapper, i) {
 
 // HAMBURGER MENU
 
-var test = anime.timeline();
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.overlay__menu');
 
-function init(timeline, easing){
-  timeline.add({
+var test = anime.timeline({
+  autoplay: false
+});
+
+test.add({
   targets:'.top',
   translateY:10,
   duration:400,
-  easing: easing
+  easing: 'easeInBack'
   }).
   add({
     targets:'.bottom',
     translateY:-10,
     duration:400,
-    easing: easing,
+    easing: 'easeInBack',
     offset:400
   })
   .add({
@@ -139,7 +143,7 @@ function init(timeline, easing){
     rotate: ['0', '45deg'],
     duration: 400,
     offset:900,
-    easing: easing,
+    easing: 'easeInBack',
     transformOrigin:"50% 50%"
   }).
   add({
@@ -148,23 +152,56 @@ function init(timeline, easing){
     rotate: ['0', '-45deg'],
     duration: 400,
     offset:900,
-    easing: easing,
+    easing: 'easeInBack',
     transformOrigin:"50% 50%"
   })
-}
-    const menu = document.querySelector('.overlay__menu');
-    console.log(menu)
-  document.querySelector('.hamburger').onclick = function() {
+   
+
+  hamburger.onclick = function() {
     // this.classList.toggle('active');
     // if(this.classList.contains('active')){   
     //   test.reverse();
     // }
     // test.play();
-    menu.classList.toggle('menu__open');
+    if(!menu.classList.contains('menu__open')){
+      menu.classList.add('menu__open');
+    }
     test.reverse();
     test.play();
   }
 
+const tl = new TimelineMax();
+
+hamburger.addEventListener("click",proba);
+
+// function proba(){
+//   tl.add( TweenLite.to(menu, 0.5, {opacity:1}))
+//   .add( TweenMax.staggerFrom('.btn', 1, {opacity:0, x:-200, delay:0.3, ease:Back.easeOut}, 0.3));
+//   }
+
+var allCallbacks = anime({
+  targets: '.btn',
+  autoplay: false,
+  translateX: 500,
+  delay: function(el, i) { return 1000 + (i * 100); },
+  duration: function(el, i) { return 500 + (i * 500); },
+  complete: function(anim) {
+    menu.classList.remove('menu__open');
+    console.log("finished");
+  }
+});
+  
+function proba(){
+  allCallbacks.reverse();
+  allCallbacks.play();
+}
+  
+
+  
+
+
 
 // init(test,'easeInBack');
-init(test,'easeInOutCubic');
+// init(test,'easeInOutCubic');
+
+// TweenMax.stagerFrom('.btn',2, {scale:0},1);
